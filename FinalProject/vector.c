@@ -17,6 +17,9 @@ char access_element_vector(struct vector* v, size_t height, size_t width)
 	if(height > v->height)
 		exit(OUT_OF_BOUNDS);
         if(width > v->width)
+	if(height >= v->height)
+		exit(OUT_OF_BOUNDS);
+        if(width >= v->width)
             exit(OUT_OF_BOUNDS);
 	return v->data[height][width];
 }
@@ -40,6 +43,7 @@ void insert_element_vector(struct vector* v, char element_to_insert, int height,
                     v->data[i] = malloc(sizeof(char) * v->heightcapacity);
                  v->widthcapacity *= 2;
 		
+		v->widthcapacity *= 2;
 	}
 	v->data[width][height] = element_to_insert;
 	if(height > v-> height)

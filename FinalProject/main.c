@@ -5,6 +5,7 @@
 
 
 int main(int argc, char** argv) {
+
     struct vector maze;
     init_vector(&maze);
     int i, j;
@@ -22,6 +23,7 @@ int main(int argc, char** argv) {
     }
     
     free_vector(&maze);
+
     return (EXIT_SUCCESS);
 }
 
