@@ -14,6 +14,9 @@ void init_vector(struct vector* v)
 
 char access_element_vector(struct vector* v, size_t height, size_t width)
 {
+	if(height > v->height)
+		exit(OUT_OF_BOUNDS);
+        if(width > v->width)
 	if(height >= v->height)
 		exit(OUT_OF_BOUNDS);
         if(width >= v->width)
@@ -35,6 +38,11 @@ void insert_element_vector(struct vector* v, char element_to_insert, int height,
         if(v->widthcapacity == v->width)
 	{
 		v->data = realloc(v->data, sizeof(char *) * v->widthcapacity * 2);
+                int i;
+                for(i = v->widthcapacity; i < v->widthcapacity * 2; i++)
+                    v->data[i] = malloc(sizeof(char) * v->heightcapacity);
+                 v->widthcapacity *= 2;
+		
 		v->widthcapacity *= 2;
 	}
 	v->data[width][height] = element_to_insert;
