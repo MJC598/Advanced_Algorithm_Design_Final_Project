@@ -22,8 +22,8 @@ struct vector
 };
 
 void init_vector(struct vector* v);
-char access_element_vector(struct vector* v, size_t index);
-void insert_element_vector(struct vector* v, int element_to_insert, int weight);
+char access_element_vector(struct vector* v, size_t height, size_t width);
+void insert_element_vector(struct vector* v, char element_to_insert, int height, int width);
 void free_vector(struct vector* v);
 int vector_height(struct vector* v);
 int vector_width(struct vector* v);
