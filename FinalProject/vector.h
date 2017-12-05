@@ -28,6 +28,6 @@ void insert_element_vector(struct vector* v, char element_to_insert, int height,
 void free_vector(struct vector* v);
 int vector_height(struct vector* v);
 int vector_width(struct vector* v);
-void parse_getline(char* input, Maze maze);
+Maze parse_getline(char* input, Maze maze);
 
 #endif

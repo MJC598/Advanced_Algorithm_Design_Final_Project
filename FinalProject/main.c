@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
   // }
   Maze maze;
   init_vector(&maze);
-  parse_getline(argv[1], maze);
+  maze = parse_getline(argv[1], maze);
   int i, j;
   int height = vector_height(&maze);
   printf("%d\n", height);
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
   return (EXIT_SUCCESS);
 }
 
-void parse_getline(char* input, Maze maze) {
+Maze parse_getline(char* input, Maze maze) {
   int counter = 0;
   int width = 0;
   FILE* fp = fopen(input, "r");
@@ -37,33 +37,15 @@ void parse_getline(char* input, Maze maze) {
     if(width < linelen){
       width = linelen;
     }
-    // printf("Content: %s\n", line);
     int j = 0;
-    // char wall = '#';
-    // char start = 'S';
-    // char first = 'F';
-    // char end = 'E';
-    // char last = 'L';
 
-    for(j = 0; j < linelen - 1; j++){
-      // printf("line[j] = %c\n", line[j]);
-      // if(strcmp(&line[j], &wall) == 0 || strcmp(&line[j], &start) == 0 || strcmp(&line[j], &first) == 0 || strcmp(&line[j], &end) == 0 || strcmp(&line[j], &last) == 0){
-        // printf("Entered if statement; line[j] = %c\n", line[j]);
-        // if(counter == 4){
-          // printf("Entered counter == 4 if statement\n");
-          insert_element_vector(&maze, line[j], j, counter);
-          printf("%c", access_element_vector(&maze, j, counter));
-        // }
-        // printf("%c ", access_element_vector(&maze, counter, j));
-      // printf("%c ", access_element_vector(&maze, counter, j));
-      // }
-      // printf("%c ", access_element_vector(&maze, counter, j));
+    for(j = 0; j < linelen; j++){
+          insert_element_vector(&maze, line[j], counter, j);
     }
-    printf("\n");
     counter++;
 
 	}
-  // printf("%c \n", maze[22][40]);
 
 	free(line);
+  return(maze);
 }
