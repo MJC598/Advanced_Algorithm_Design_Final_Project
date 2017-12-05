@@ -9,17 +9,7 @@ int main(int argc, char* argv[]) {
   Maze maze;
   init_vector(&maze);
   maze = parse_getline(argv[1], maze);
-  int i, j;
-  int height = vector_height(&maze);
-  printf("%d\n", height);
-  int width = vector_width(&maze);
-  printf("%d\n", width);
-  for(i = 0; i < height; i++){
-    for(j = 0; j < width; j++){
-      printf("%c", access_element_vector(&maze, i, j));
-    }
-    printf("\n");
-  }
+  printMaze(maze);
   free_vector(&maze);
   return (EXIT_SUCCESS);
 }
@@ -48,4 +38,16 @@ Maze parse_getline(char* input, Maze maze) {
 
 	free(line);
   return(maze);
+}
+
+void printMaze(Maze maze){
+  int i, j;
+  int height = vector_height(&maze);
+  int width = vector_width(&maze);
+  for(i = 0; i < height; i++){
+    for(j = 0; j < width; j++){
+      printf("%c", access_element_vector(&maze, i, j));
+    }
+    printf("\n");
+  }
 }

@@ -29,5 +29,6 @@ void free_vector(struct vector* v);
 int vector_height(struct vector* v);
 int vector_width(struct vector* v);
 Maze parse_getline(char* input, Maze maze);
+void printMaze(Maze maze);
 
 #endif
