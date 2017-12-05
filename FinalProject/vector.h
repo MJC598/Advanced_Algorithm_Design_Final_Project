@@ -1,3 +1,4 @@
+
 #ifndef H_VECTOR_H
 #define H_VECTOR_H
 
@@ -9,17 +10,17 @@
 
 enum vector_errors
 {
-	OUT_OF_BOUNDS = 0,
+	OUT_OF_BOUNDS = 69,
 };
 
-struct vector
+typedef struct vector
 {
 	char** data;
 	int height;
-        int width;
+  int width;
 	int heightcapacity;
-        int widthcapacity;
-};
+  int widthcapacity;
+}Maze;
 
 void init_vector(struct vector* v);
 char access_element_vector(struct vector* v, size_t height, size_t width);
@@ -27,5 +28,6 @@ void insert_element_vector(struct vector* v, char element_to_insert, int height,
 void free_vector(struct vector* v);
 int vector_height(struct vector* v);
 int vector_width(struct vector* v);
+void parse_getline(char* input, Maze maze);
 
 #endif
