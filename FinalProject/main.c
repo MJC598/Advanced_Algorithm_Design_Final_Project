@@ -91,8 +91,8 @@ void printIntMaze(IntMaze intMaze){
   int i, j;
   int height = vector_intHeight(&intMaze);
   int width = vector_intWidth(&intMaze);
-  for(i = 0; i < height; i++){
-    for(j = 0; j < width; j++){
+  for(i = 0; i <= height; i++){
+    for(j = 0; j <= width; j++){
       printf("%d", access_element_intVector(&intMaze, i, j));
     }
     printf("\n");
