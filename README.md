@@ -10,7 +10,9 @@ Take a BFS for both robots. If one of the robots can reach the exit without a co
 
 HOW TO RUN:
 after importing the programs, type make to compile. The resulting executable file will be named Final_Project. To get the code to run you need two commands:
-"/n" ./Final_Project room.txt "/n"
+
+./Final_Project room.txt
+
 With room.txt being the maze you want to test on it.
 
 OUTPUT:
