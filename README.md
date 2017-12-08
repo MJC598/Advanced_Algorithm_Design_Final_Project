@@ -16,4 +16,9 @@ after importing the programs, type make to compile. The resulting executable fil
 With room.txt being the maze you want to test on it.
 
 OUTPUT:
-The output will be the initial maze. To continue through press "enter" and the robot will move accordingly. When both robots have reached their respective exits or it is deemed impossible the program will terminate.
+Multiple outputs will display if one of the robots has to diverge, otherwise the direct paths of the robots will be shown. Also shows the length of each robot's path. 
+
+Exit Codes: 
+5 - file would not open
+6 - Incorrect number of arguments
+7 - Parsing error
