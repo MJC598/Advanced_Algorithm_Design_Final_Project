@@ -16,7 +16,7 @@ after importing the programs, type make to compile. The resulting executable fil
 With room.txt being the maze you want to test on it.
 
 OUTPUT:
-Multiple outputs will display if one of the robots has to diverge, otherwise the direct paths of the robots will be shown. Also shows the length of each robot's path. 
+The direct paths of the robots will be shown. If there are no direct paths readily avaliable, but there are solutions to the maze, multiple outputs will be displayed. The displays will be the intial move out of the way by the first robot, then the first robot will exit the maze. Following the exit of the maze, the program will report the direct way out of the maze for the last remaining robot. All doable solutions also show the length of each robot's path.
 
 Exit Codes: 
 5 - file would not open
